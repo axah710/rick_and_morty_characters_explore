@@ -1,6 +1,7 @@
 import '../../exports.dart';
 
 class AppConstants {
+  static const int pageSize = 20;
   static const dialogLongDuration = 2500;
   static const dialogShortDuration = 2000;
   static double defaultElevation = 4;

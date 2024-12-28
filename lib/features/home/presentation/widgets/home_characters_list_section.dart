@@ -14,7 +14,6 @@ class HomeCharactersListSection extends StatefulWidget {
 }
 
 class _HomeCharactersListSectionState extends State<HomeCharactersListSection> {
-  static const int _pageSize = 20;
   final PagingController<int, CharacterDataResponseModel> _pagingController =
       PagingController(firstPageKey: 1);
 
@@ -37,7 +36,7 @@ class _HomeCharactersListSectionState extends State<HomeCharactersListSection> {
   }
 
   void _handleFetchedData(List<CharacterDataResponseModel> data, int pageKey) {
-    final isLastPage = data.length < _pageSize;
+    final isLastPage = data.length < AppConstants.pageSize;
     if (isLastPage) {
       _pagingController.appendLastPage(data);
     } else {
