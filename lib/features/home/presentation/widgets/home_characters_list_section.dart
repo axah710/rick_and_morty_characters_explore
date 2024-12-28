@@ -12,7 +12,8 @@ class HomeCharactersListSection extends StatelessWidget {
         itemCount: characterDataList.length,
         itemBuilder: (context, index) {
           return HomeCharacterCardSection(
-              characterData: characterDataList[index]);
+            characterData: characterDataList[index],
+          );
         },
       ),
     );

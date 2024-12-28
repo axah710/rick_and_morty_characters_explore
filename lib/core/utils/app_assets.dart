@@ -9,4 +9,5 @@ class AppAssets {
   static const String rick = '${imagesPath}rick.png';
   static const String appBarLogo = '${imagesPath}app_bar_logo.png';
   static const String planet = '${imagesPath}planet.png';
+  static const String favorites = '${imagesPath}favorites.png';
 }

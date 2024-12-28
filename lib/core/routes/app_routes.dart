@@ -1,12 +1,14 @@
 import '../../exports.dart';
 import '../../features/character_details/data/models/character_details_arguments_model.dart';
 import '../../features/character_details/presentation/screen/character_details_screen.dart';
+import '../../features/favorites/presentation/screen/favorites_screen.dart';
 import '../../features/home/presentation/screen/home_screen.dart';
 
 class Routes {
   Routes._(); //! Private constructor to prevent instantiation
   static const String homeRoute = '/home';
   static const String characterDetailRoute = '/characterDetail';
+  static const String favoritesRoute = '/favorites';
 }
 
 class RouteGenerator {
@@ -30,6 +32,11 @@ class RouteGenerator {
             routeSettings.arguments as CharacterDetailsArgumentsModel;
         return buildPageRoute(
           child: CharacterDetailsScreen(characterDetails: characterDetails),
+          routeSettings: routeSettings,
+        );
+      case Routes.favoritesRoute:
+        return buildPageRoute(
+          child: const FavoritesScreen(),
           routeSettings: routeSettings,
         );
     }

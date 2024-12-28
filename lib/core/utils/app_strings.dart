@@ -32,4 +32,5 @@ class AppStrings {
   //! UI Labels
   static const String findYourCharacter = 'Find your character';
   static const String searchCharacter = 'Search Character';
+  static const String favoriteCharacters = 'Favorite Characters';
 }
