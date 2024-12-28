@@ -1,5 +1,4 @@
 import '../../exports.dart';
-import '../utils/app_strings.dart';
 import 'custom_elevated_button.dart';
 import 'custome_svg_image.dart';
 

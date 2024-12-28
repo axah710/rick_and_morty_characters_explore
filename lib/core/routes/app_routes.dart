@@ -1,7 +1,9 @@
 import '../../exports.dart';
+import '../../features/home/presentation/screen/home_screen.dart';
 
 class Routes {
   Routes._(); //! Private constructor to prevent instantiation
+  static const String homeRoute = '/home';
 }
 
 class RouteGenerator {
@@ -10,7 +12,13 @@ class RouteGenerator {
   static Duration pageRouteTransitionDurationGlobal = 400.milliseconds;
   static Route<T>? getRoute<T>(RouteSettings routeSettings) {
     debugPrint(routeSettings.name);
-    switch (routeSettings.name) {}
+    switch (routeSettings.name) {
+      case Routes.homeRoute:
+        return buildPageRoute(
+          child: const HomeScreen(),
+          routeSettings: routeSettings,
+        );
+    }
     //! TODO: In production or release mode, return `null`. In development or debug mode, use `No Route Found` to enhance the user experience (UX).
     return buildPageRoute<T>(
       child: Scaffold(

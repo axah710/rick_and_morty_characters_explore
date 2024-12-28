@@ -30,4 +30,6 @@ class AppStrings {
   static const String appTitle = 'Rick And Morty App';
 
   //! UI Labels
+  static const String findYourCharacter = 'Find your character';
+  static const String searchCharacter = 'Search Character';
 }

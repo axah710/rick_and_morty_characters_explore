@@ -24,3 +24,5 @@ export 'package:rick_and_morty_characters_explore/core/widgets/app_text_button.d
 export 'package:rick_and_morty_characters_explore/core/widgets/custom_image_provider_from_assets.dart';
 export 'package:rick_and_morty_characters_explore/core/widgets/text_form_field.dart';
 export '../../../../core/utils/app_assets.dart';
+export '../../../../core/utils/app_strings.dart';
+

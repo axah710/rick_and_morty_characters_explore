@@ -28,7 +28,7 @@ class CustomAppBarWithBackArrowSection extends StatelessWidget {
                     },
                     child: SvgPicture.asset(
                       AppAssets.arrowLeft,
-                      color: appBarColor ?? AppColors.black,
+                      color: appBarColor ?? AppColors.white,
                     ),
                   ).alignCenterStart(),
                 )
@@ -36,7 +36,7 @@ class CustomAppBarWithBackArrowSection extends StatelessWidget {
           Text(
             appBarTitle,
             style: getSemiBoldTextStyle(
-              color: appBarColor ?? AppColors.black,
+              color: appBarColor ?? AppColors.white,
               fontSize: 18,
               height: 0,
             ),

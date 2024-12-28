@@ -2,7 +2,7 @@ import '../../exports.dart';
 
 ThemeData appTheme() {
   return ThemeData(
-    scaffoldBackgroundColor: AppColors.white,
+    scaffoldBackgroundColor: AppColors.darkPurple,
     appBarTheme: AppBarTheme(
       backgroundColor: null,
       iconTheme: IconThemeData(color: AppColors.primaryColor),
