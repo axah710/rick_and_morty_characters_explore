@@ -19,7 +19,6 @@ class FavoritesBodySection extends StatelessWidget {
         25.vs,
         Expanded(
           child: HomeCharactersListSection(
-            characterDataResponseModel: [],
           ),
         ),
       ],

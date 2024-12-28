@@ -34,9 +34,7 @@ class SetupCharactersBlocBuilder extends StatelessWidget {
   // }
 
   Widget setupSuccess(CharacterResponseModel characterDataResponseModel) {
-    return HomeScreenBodySection(
-      characterDataResponseModel: characterDataResponseModel.data,
-    );
+    return HomeScreenBodySection();
   }
 
   Widget setupError() {
