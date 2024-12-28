@@ -30,18 +30,19 @@ class _HomeCharactersListSectionState extends State<HomeCharactersListSection> {
     try {
       final cubit = context.read<CharacterCubit>();
       await cubit.fetchCharacters(page: pageKey);
-
-      final data = cubit.characterDataResponseModel?.data ?? [];
-      final isLastPage = data.length < _pageSize;
-
-      if (isLastPage) {
-        _pagingController.appendLastPage(data);
-      } else {
-        final nextPageKey = pageKey + 1;
-        _pagingController.appendPage(data, nextPageKey);
-      }
+      _handleFetchedData(cubit.characterDataResponseModel?.data ?? [], pageKey);
     } catch (error) {
       _pagingController.error = error;
+    }
+  }
+
+  void _handleFetchedData(List<CharacterDataResponseModel> data, int pageKey) {
+    final isLastPage = data.length < _pageSize;
+    if (isLastPage) {
+      _pagingController.appendLastPage(data);
+    } else {
+      final nextPageKey = pageKey + 1;
+      _pagingController.appendPage(data, nextPageKey);
     }
   }
 
@@ -67,7 +68,7 @@ class _HomeCharactersListSectionState extends State<HomeCharactersListSection> {
         ),
         noItemsFoundIndicatorBuilder: (context) => Center(
           child: Text(
-            'No characters found.',
+            AppStrings.noCharactersFound,
             style: getRegularTextStyle(color: AppColors.white, fontSize: 16),
           ),
         ),

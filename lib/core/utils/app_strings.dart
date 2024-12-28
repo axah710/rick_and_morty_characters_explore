@@ -33,4 +33,5 @@ class AppStrings {
   static const String findYourCharacter = 'Find your character';
   static const String searchCharacter = 'Search Character';
   static const String favoriteCharacters = 'Favorite Characters';
+  static const String noCharactersFound = 'No characters found.';
 }
