@@ -5,15 +5,16 @@ import '../../data/models/response/character_data_response_model.dart';
 import '../managers/home_cubit/home_cubit.dart';
 import 'home_character_card_section.dart';
 
-class HomeCharactersListSection extends StatefulWidget {
-  const HomeCharactersListSection({super.key});
+class HomeCharactersPaginatedListSection extends StatefulWidget {
+  const HomeCharactersPaginatedListSection({super.key});
 
   @override
-  State<HomeCharactersListSection> createState() =>
-      _HomeCharactersListSectionState();
+  State<HomeCharactersPaginatedListSection> createState() =>
+      _HomeCharactersPaginatedListSectionState();
 }
 
-class _HomeCharactersListSectionState extends State<HomeCharactersListSection> {
+class _HomeCharactersPaginatedListSectionState
+    extends State<HomeCharactersPaginatedListSection> {
   final PagingController<int, CharacterDataResponseModel> _pagingController =
       PagingController(firstPageKey: 1);
 

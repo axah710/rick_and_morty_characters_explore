@@ -1,9 +1,8 @@
 import '../../../../core/widgets/logo_app_bar_widget.dart';
 import '../../../../exports.dart';
-import '../../../home/presentation/widgets/home_characters_list_section.dart';
+import '../../../home/presentation/widgets/home_characters_paginated_list_section.dart';
 
 class FavoritesBodySection extends StatelessWidget {
-  
   const FavoritesBodySection({super.key});
 
   @override
@@ -18,8 +17,7 @@ class FavoritesBodySection extends StatelessWidget {
         ),
         25.vs,
         Expanded(
-          child: HomeCharactersListSection(
-          ),
+          child: HomeCharactersPaginatedListSection(),
         ),
       ],
     );
