@@ -27,6 +27,7 @@ class AppStrings {
   //! Main Strings
   static const String deny = 'Deny';
   static const String allow = 'Allow';
+  static const String appTitle = 'Rick And Morty App';
 
   //! UI Labels
 }

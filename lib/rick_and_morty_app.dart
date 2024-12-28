@@ -1,3 +1,4 @@
+import 'package:rick_and_morty_characters_explore/core/utils/app_strings.dart';
 import 'exports.dart';
 
 class RickAndMortyApp extends StatelessWidget {
@@ -11,28 +12,37 @@ class RickAndMortyApp extends StatelessWidget {
     //! Get screen width
     double screenWidth = MediaQuery.sizeOf(context).width;
     //! Set the design size dynamically based on screen size
-    Size designSize;
-    if (screenWidth >= 1440) {
-      designSize = Size(1440, 2808); //! For large screens
-    } else if (screenWidth >= 375) {
-      designSize = Size(375, 1343); //! For medium screens
-    } else {
-      designSize = Size(360, 640); //! Default for small screens
-    }
+    Size designSize = _getDesignSize(screenWidth);
+
     return ScreenUtilInit(
       designSize: designSize, //! Base design size for scaling UI elements
       minTextAdapt: true, //! Text scaling according to screen size
       splitScreenMode: true, //! Handle split-screen mode
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Rick And Morty App',
+        title: AppStrings.appTitle,
         theme: appTheme(),
         onGenerateRoute: RouteGenerator.getRoute,
         navigatorKey: navigatorKey,
-        // initialRoute:
-        //     Routes., //! Initial route is the onboarding screen
-        // home: const (),
+        // initialRoute: Routes.onboarding,
+        // home: const OnboardingScreen(),
       ),
     );
+  }
+
+  Size _getDesignSize(double screenWidth) {
+    const double largeScreenWidth = 1440;
+    const double mediumScreenWidth = 375;
+    const Size largeScreenSize = Size(1440, 2808);
+    const Size mediumScreenSize = Size(375, 1343);
+    const Size smallScreenSize = Size(360, 640);
+
+    if (screenWidth >= largeScreenWidth) {
+      return largeScreenSize; //! For large screens
+    } else if (screenWidth >= mediumScreenWidth) {
+      return mediumScreenSize; //! For medium screens
+    } else {
+      return smallScreenSize; //! Default for small screens
+    }
   }
 }
