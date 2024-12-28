@@ -398,7 +398,7 @@ Future<Either<Failure, BaseResponseModel>> execute<T>(
         return Right(value);
       } else {
         return Left(
-          Failure(int.parse(value.code!), value.message ?? 'Unknown erro'),
+          Failure(int.parse(value.code!), value.message ?? 'Unknown error'),
         );
       }
     } catch (error) {

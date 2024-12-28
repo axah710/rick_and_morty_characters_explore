@@ -1,13 +1,14 @@
 import 'package:rick_and_morty_characters_explore/features/character_details/data/models/character_details_arguments_model.dart';
 
 import '../../../../exports.dart';
-import '../../data/character_data_model.dart';
+import '../../data/models/response/character_data_response_model.dart';
 import 'home_character_info_section.dart';
 
 class HomeCharacterCardSection extends StatelessWidget {
-  final CharacterDataModel characterData;
+  final CharacterDataResponseModel characterDataResponseModel;
 
-  const HomeCharacterCardSection({super.key, required this.characterData});
+  const HomeCharacterCardSection(
+      {super.key, required this.characterDataResponseModel});
 
   @override
   Widget build(BuildContext context) {
@@ -19,13 +20,13 @@ class HomeCharacterCardSection extends StatelessWidget {
             context,
             Routes.characterDetailRoute,
             arguments: CharacterDetailsArgumentsModel(
-              image: characterData.image,
-              name: characterData.name,
-              gender: characterData.gender,
-              species: characterData.species,
-              status: characterData.status,
-              location: characterData.location,
-              origin: characterData.origin,
+              image: characterDataResponseModel.image,
+              name: characterDataResponseModel.name,
+              gender: characterDataResponseModel.gender,
+              species: characterDataResponseModel.species,
+              status: characterDataResponseModel.status,
+              location: characterDataResponseModel.location.name,
+              origin: characterDataResponseModel.origin.name,
             ),
           );
         },
@@ -38,14 +39,16 @@ class HomeCharacterCardSection extends StatelessWidget {
           child: Row(
             children: [
               CustomImageProviderFromAssetsAndNetwork(
-                assetsImagePath: characterData.image,
+                assetsImagePath: characterDataResponseModel.image,
                 assetsImageHeight: 75.h,
                 assetsImageWidth: 75.w,
                 assetsImageRadius: 14.r,
+                isNetworkImage: true,
               ),
               SizedBox(width: 15.w),
               Expanded(
-                child: HomeCharacterInfoSection(characterData: characterData),
+                child: HomeCharacterInfoSection(
+                    characterDataResponseModel: characterDataResponseModel),
               ),
               IconButton(
                 onPressed: () {

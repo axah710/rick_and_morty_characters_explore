@@ -1,5 +1,5 @@
 import '../../../../exports.dart';
-import '../../data/character_data_model.dart';
+import '../../data/models/character_data_model.dart';
 
 final List<CharacterDataModel> characterDataList = [
   CharacterDataModel(

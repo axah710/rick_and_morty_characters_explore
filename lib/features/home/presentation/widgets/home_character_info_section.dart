@@ -1,10 +1,10 @@
 import '../../../../exports.dart';
-import '../../data/character_data_model.dart';
+import '../../data/models/response/character_data_response_model.dart';
 
 class HomeCharacterInfoSection extends StatelessWidget {
-  final CharacterDataModel characterData;
+  final CharacterDataResponseModel characterDataResponseModel;
 
-  const HomeCharacterInfoSection({super.key, required this.characterData});
+  const HomeCharacterInfoSection({super.key, required this.characterDataResponseModel});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class HomeCharacterInfoSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          characterData.name,
+          characterDataResponseModel.name,
           style: getBoldTextStyle(
             color: AppColors.white,
             fontSize: 18,
@@ -20,7 +20,7 @@ class HomeCharacterInfoSection extends StatelessWidget {
         ),
         5.vs,
         Text(
-          characterData.species,
+          characterDataResponseModel.species,
           style: getRegularTextStyle(
             color: AppColors.white,
             fontSize: 14,
@@ -28,7 +28,7 @@ class HomeCharacterInfoSection extends StatelessWidget {
         ),
         5.vs,
         Text(
-          characterData.gender,
+          characterDataResponseModel.gender,
           style: getRegularTextStyle(
             color: AppColors.white,
             fontSize: 14,

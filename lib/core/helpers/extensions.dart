@@ -115,14 +115,7 @@ extension StringExtension on String? {
     return true;
   }
 
-  bool get validatePassword {
-    if (isNullOrEmpty ||
-        this!.trim().isEmpty ||
-        this!.length < AppConstants.passwordLength) {
-      return false;
-    }
-    return true;
-  }
+ 
 
   bool validateConfirmPassword(String? password) {
     if (validate == password) {

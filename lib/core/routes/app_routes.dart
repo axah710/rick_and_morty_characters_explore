@@ -1,11 +1,17 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:rick_and_morty_characters_explore/features/home/domain/home_use_case/home_use_case.dart';
+import 'package:rick_and_morty_characters_explore/features/home/presentation/managers/home_cubit/home_cubit.dart';
+
 import '../../exports.dart';
 import '../../features/character_details/data/models/character_details_arguments_model.dart';
 import '../../features/character_details/presentation/screen/character_details_screen.dart';
 import '../../features/favorites/presentation/screen/favorites_screen.dart';
 import '../../features/home/presentation/screen/home_screen.dart';
+import '../../service_locator.dart';
 
 class Routes {
   Routes._(); //! Private constructor to prevent instantiation
+  static final String splashScreen = '/';
   static const String homeRoute = '/home';
   static const String characterDetailRoute = '/characterDetail';
   static const String favoritesRoute = '/favorites';
@@ -20,7 +26,13 @@ class RouteGenerator {
     switch (routeSettings.name) {
       case Routes.homeRoute:
         return buildPageRoute(
-          child: const HomeScreen(),
+          child: BlocProvider(
+            create: (context) => CharacterCubit(
+              getAllCharactersUseCase:
+                  ServiceLocator.getIt<GetAllCharactersUseCase>(),
+            )..fetchCharacters(),
+            child: const HomeScreen(),
+          ),
           routeSettings: routeSettings,
         );
       case Routes.characterDetailRoute:

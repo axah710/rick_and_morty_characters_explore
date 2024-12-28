@@ -1,4 +1,4 @@
-import 'package:rick_and_morty_characters_explore/features/home/presentation/widgets/home_screen_body_section.dart';
+import 'package:rick_and_morty_characters_explore/features/home/presentation/widgets/home_bloc_builder.dart';
 
 import '../../../../exports.dart';
 
@@ -11,7 +11,7 @@ class HomeScreen extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: AppConstants.kSTEPDirectionalPadding,
-          child: HomeScreenBodySection(),
+          child: SetupCharactersBlocBuilder(),
         ),
       ),
     );

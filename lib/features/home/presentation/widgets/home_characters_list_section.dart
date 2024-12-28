@@ -1,9 +1,12 @@
 import '../../../../exports.dart';
+import '../../data/models/response/character_data_response_model.dart';
 import 'character_data_model_dummy_data.dart';
 import 'home_character_card_section.dart';
 
 class HomeCharactersListSection extends StatelessWidget {
-  const HomeCharactersListSection({super.key});
+  final List<CharacterDataResponseModel> characterDataResponseModel;
+  const HomeCharactersListSection(
+      {super.key, required this.characterDataResponseModel});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +15,7 @@ class HomeCharactersListSection extends StatelessWidget {
         itemCount: characterDataList.length,
         itemBuilder: (context, index) {
           return HomeCharacterCardSection(
-            characterData: characterDataList[index],
+            characterDataResponseModel: characterDataResponseModel[index],
           );
         },
       ),

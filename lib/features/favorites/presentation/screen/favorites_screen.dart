@@ -3,6 +3,7 @@ import 'package:rick_and_morty_characters_explore/features/favorites/presentatio
 import '../../../../exports.dart';
 
 class FavoritesScreen extends StatelessWidget {
+  
   const FavoritesScreen({super.key});
 
   @override

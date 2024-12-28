@@ -20,6 +20,7 @@ Widget buildCharacterDetailsContainer(
           assetsImageHeight: 150.h,
           assetsImageWidth: 250.w,
           assetsImageRadius: 14.r,
+          isNetworkImage: true,
         ),
         8.vs,
         Text(
