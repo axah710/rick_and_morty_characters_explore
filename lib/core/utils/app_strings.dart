@@ -3,7 +3,7 @@
 class AppStrings {
   AppStrings._(); //! Private constructor to prevent instantiation
 
-  //! Error Messages
+  //! Messages
   static const String unprocessableContent = 'Had Semantic Errors';
   static const String certificationError = "certification_error";
   static const String connectionError = "connection_error";
@@ -21,8 +21,7 @@ class AppStrings {
   static const String cacheReadSuccess = "cache_read_success";
   static const String serverError = 'SERVER_ERROR';
   static const String noContent = "no_content";
-    static const String success = "success";
-
+  static const String success = "success";
 
   //! Main Strings
   static const String deny = 'Deny';

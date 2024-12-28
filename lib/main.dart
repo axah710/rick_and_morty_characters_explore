@@ -24,7 +24,6 @@ void main() async {
   //! Initialize Bloc observer for state management
   Bloc.observer = GlobalBlocObserver();
 
-
   //! Run the main application
   runApp(
     RickAndMortyApp(),

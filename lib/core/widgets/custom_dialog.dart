@@ -29,13 +29,6 @@ class CustomDialog extends StatelessWidget {
             //set widgets vertically
             mainAxisSize: MainAxisSize.min,
             children: [
-              // CustomSVGImage(
-              //   asset: asset!,
-              //    // AppAssets().tripiaLogo,
-              //    // height: 38.h,
-              //    // width: 85.w,
-              //  ),
-              //  20.vs,
               AnimatedContainer(
                 duration: 500.milliseconds,
                 child: showCircularLoading!

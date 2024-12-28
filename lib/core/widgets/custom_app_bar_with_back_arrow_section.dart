@@ -1,6 +1,5 @@
 // ignore_for_file: deprecated_member_use
 
-
 import '../../exports.dart';
 
 class CustomAppBarWithBackArrowSection extends StatelessWidget {

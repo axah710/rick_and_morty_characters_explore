@@ -95,4 +95,4 @@ class AppTextButton extends StatelessWidget {
   }
 }
 // This widget is designed to create a customizable text button using
-//Flutter's TextButton widget.
+// Flutter's TextButton widget.

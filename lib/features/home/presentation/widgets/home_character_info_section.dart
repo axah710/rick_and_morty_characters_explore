@@ -4,7 +4,8 @@ import '../../data/models/response/character_data_response_model.dart';
 class HomeCharacterInfoSection extends StatelessWidget {
   final CharacterDataResponseModel characterDataResponseModel;
 
-  const HomeCharacterInfoSection({super.key, required this.characterDataResponseModel});
+  const HomeCharacterInfoSection(
+      {super.key, required this.characterDataResponseModel});
 
   @override
   Widget build(BuildContext context) {

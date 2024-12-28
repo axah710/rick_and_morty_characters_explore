@@ -25,4 +25,3 @@ export 'package:rick_and_morty_characters_explore/core/widgets/custom_image_prov
 export 'package:rick_and_morty_characters_explore/core/widgets/text_form_field.dart';
 export '../../../../core/utils/app_assets.dart';
 export '../../../../core/utils/app_strings.dart';
-

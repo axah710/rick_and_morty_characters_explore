@@ -17,7 +17,6 @@ class PermissionDialog extends StatelessWidget {
     pop(true);
   }
 
-  //AHMED  SOBHY  WAS CODE  HERE
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
