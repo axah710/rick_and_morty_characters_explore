@@ -17,7 +17,7 @@ class CharacterDetailsBodySection extends StatelessWidget {
         LogoAppBarWidget(isPop: true),
         100.vs,
         Stack(
-          clipBehavior: Clip.none,
+          clipBehavior: Clip.none, //! Allows elements to overflow outside the Stack
           children: [
             buildCharacterDetailsContainer(characterDetails),
             buildCharachterPlanetImage(),
