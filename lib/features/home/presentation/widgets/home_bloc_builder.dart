@@ -38,8 +38,11 @@ class SetupCharactersBlocBuilder extends StatelessWidget {
   }
 
   Widget setupError() {
-    return const Center(
-      child: Text('An error occurred. Please try again.'),
+    return Center(
+      child: Text(
+        'An error occurred. Please try again.',
+        style: getRegularTextStyle(color: AppColors.white, fontSize: 16),
+      ),
     );
   }
 }
