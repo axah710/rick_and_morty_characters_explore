@@ -1,9 +1,12 @@
 import '../../exports.dart';
+import '../../features/character_details/data/models/character_details_arguments_model.dart';
+import '../../features/character_details/presentation/screen/character_details_screen.dart';
 import '../../features/home/presentation/screen/home_screen.dart';
 
 class Routes {
   Routes._(); //! Private constructor to prevent instantiation
   static const String homeRoute = '/home';
+  static const String characterDetailRoute = '/characterDetail';
 }
 
 class RouteGenerator {
@@ -16,6 +19,17 @@ class RouteGenerator {
       case Routes.homeRoute:
         return buildPageRoute(
           child: const HomeScreen(),
+          routeSettings: routeSettings,
+        );
+      case Routes.characterDetailRoute:
+        //! I made the code to use a model for passing arguments instead of
+        //! passing four separate arguments. This adheres to clean code
+        //! principles by reducing the number of arguments, making the code
+        //! more testable and easier to read.
+        final characterDetails =
+            routeSettings.arguments as CharacterDetailsArgumentsModel;
+        return buildPageRoute(
+          child: CharacterDetailsScreen(characterDetails: characterDetails),
           routeSettings: routeSettings,
         );
     }

@@ -8,7 +8,6 @@ class HomeCharactersListSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      // height: 618.h,
       child: ListView.builder(
         itemCount: characterDataList.length,
         itemBuilder: (context, index) {

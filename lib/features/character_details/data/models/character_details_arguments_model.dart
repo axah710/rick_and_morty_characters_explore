@@ -1,4 +1,4 @@
-class CharacterDataModel {
+class CharacterDetailsArgumentsModel {
   final String image;
   final String name;
   final String gender;
@@ -7,7 +7,7 @@ class CharacterDataModel {
   final String origin;
   final String location;
 
-  CharacterDataModel({
+  CharacterDetailsArgumentsModel({
     required this.status,
     required this.origin,
     required this.location,
