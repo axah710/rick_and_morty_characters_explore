@@ -6,12 +6,11 @@ import '../../../../../core/helpers/base_state.dart';
 import '../../../../../core/utils/debug_prints.dart';
 import '../../../domain/home_use_case/home_use_case.dart';
 
-class CharacterCubit extends Cubit<CubitStates> {
-  final GetAllCharactersUseCase getAllCharactersUseCase;
+class HomeCubit extends Cubit<CubitStates> {
+  final HomeUseCase getAllCharactersUseCase;
   CharacterResponseModel? characterDataResponseModel;
 
-  CharacterCubit({required this.getAllCharactersUseCase})
-      : super(LoadingState());
+  HomeCubit({required this.getAllCharactersUseCase}) : super(LoadingState());
 
   fetchCharacters({int page = 1}) async {
     Logger.printDone('Character Cubit created!');

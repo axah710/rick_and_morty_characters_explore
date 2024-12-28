@@ -3,6 +3,6 @@ import 'package:rick_and_morty_characters_explore/core/network/model/response_mo
 
 import '../../../../core/network/abstract/failure.dart';
 
-abstract class CharacterRepository {
+abstract class HomeRepository {
   Future<Either<Failure, BaseResponseModel>> getAllCharacters({int page = 1});
 }

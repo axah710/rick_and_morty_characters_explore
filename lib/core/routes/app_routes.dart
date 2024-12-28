@@ -27,9 +27,8 @@ class RouteGenerator {
       case Routes.homeRoute:
         return buildPageRoute(
           child: BlocProvider(
-            create: (context) => CharacterCubit(
-              getAllCharactersUseCase:
-                  ServiceLocator.getIt<GetAllCharactersUseCase>(),
+            create: (context) => HomeCubit(
+              getAllCharactersUseCase: ServiceLocator.getIt<HomeUseCase>(),
             )..fetchCharacters(),
             child: const HomeScreen(),
           ),

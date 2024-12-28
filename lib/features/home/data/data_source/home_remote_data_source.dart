@@ -5,11 +5,11 @@ import '../../../../core/helpers/app_helper.dart';
 import '../../../../core/network/constants/endpoinst.dart';
 import '../../../../core/utils/debug_prints.dart';
 
-abstract class CharactersRemoteDataSource {
+abstract class HomeRemoteDataSource {
   Future<BaseResponseModel> getAllCharacters({int page = 1});
 }
 
-class CharactersRemoteDataSourceImpl implements CharactersRemoteDataSource {
+class CharactersRemoteDataSourceImpl implements HomeRemoteDataSource {
   final DioConsumer dioConsumer;
 
   CharactersRemoteDataSourceImpl({required this.dioConsumer});

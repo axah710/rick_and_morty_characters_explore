@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
-import 'package:rick_and_morty_characters_explore/features/home/data/data_source/remote_data_source.dart';
+import 'package:rick_and_morty_characters_explore/features/home/data/data_source/home_remote_data_source.dart';
 import 'package:rick_and_morty_characters_explore/features/home/data/home_repo_imp/home_repo_imp.dart';
 import 'package:rick_and_morty_characters_explore/features/home/domain/home_use_case/home_use_case.dart';
 import 'package:rick_and_morty_characters_explore/features/home/presentation/managers/home_cubit/home_cubit.dart';
@@ -65,21 +65,19 @@ class ServiceLocator {
   }
 
   void _setupHomeServiceLocator() {
-    getIt.registerLazySingleton<CharactersRemoteDataSource>(
+    getIt.registerLazySingleton<HomeRemoteDataSource>(
       () => CharactersRemoteDataSourceImpl(
         dioConsumer: getIt<DioConsumer>(),
       ),
     );
-    getIt.registerLazySingleton<CharacterRepository>(
-      () => CharactersRepositoryImpl(
-          remoteDataSource: getIt<CharactersRemoteDataSource>()),
+    getIt.registerLazySingleton<HomeRepository>(
+      () => HomeRepositoryImpl(remoteDataSource: getIt<HomeRemoteDataSource>()),
     );
-    getIt.registerLazySingleton<GetAllCharactersUseCase>(
-      () => GetAllCharactersUseCase(repository: getIt<CharacterRepository>()),
+    getIt.registerLazySingleton<HomeUseCase>(
+      () => HomeUseCase(repository: getIt<HomeRepository>()),
     );
-    getIt.registerLazySingleton<CharacterCubit>(
-      () => CharacterCubit(
-          getAllCharactersUseCase: getIt<GetAllCharactersUseCase>()),
+    getIt.registerLazySingleton<HomeCubit>(
+      () => HomeCubit(getAllCharactersUseCase: getIt<HomeUseCase>()),
     );
   }
 }

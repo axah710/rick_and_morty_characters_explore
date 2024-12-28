@@ -28,7 +28,7 @@ class _HomeCharactersPaginatedListSectionState
 
   Future<void> _fetchPage(int pageKey) async {
     try {
-      final cubit = context.read<CharacterCubit>();
+      final cubit = context.read<HomeCubit>();
       await cubit.fetchCharacters(page: pageKey);
       _handleFetchedData(cubit.characterDataResponseModel?.data ?? [], pageKey);
     } catch (error) {

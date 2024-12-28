@@ -10,7 +10,7 @@ class SetupCharactersBlocBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CharacterCubit, CubitStates>(
+    return BlocBuilder<HomeCubit, CubitStates>(
       buildWhen: (previous, current) =>
           current is LoadedState || current is FailedState,
       builder: (context, state) {
