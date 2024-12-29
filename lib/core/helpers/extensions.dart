@@ -114,16 +114,6 @@ extension StringExtension on String? {
     }
     return true;
   }
-
- 
-
-  bool validateConfirmPassword(String? password) {
-    if (validate == password) {
-      return true;
-    }
-    return false;
-  }
-// String get tr => isNotNull ? AppLocalizations.tr(context)anslate(this!)! : "";
 }
 
 extension CutomMethodsOnNullObject on Object? {
@@ -221,9 +211,4 @@ extension DynamicExtension on dynamic {
   isNotEqualTo(value) => this != value;
 }
 
-extension MediaQueryValues on BuildContext {
-  double get height => MediaQuery.of(this).size.height;
-  double get width => MediaQuery.of(this).size.width;
-  double get topPadding => MediaQuery.of(this).viewPadding.top;
-  double get bottom => MediaQuery.of(this).viewInsets.bottom;
-}
+

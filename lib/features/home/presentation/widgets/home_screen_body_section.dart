@@ -18,9 +18,9 @@ class HomeScreenBodySection extends StatelessWidget {
         ),
         35.5.vs,
         HomeSearchFieldSection(),
-        // 12.5.vs,
+        12.5.vs,
         // HomeFavoriteTextSection(),
-        // 17.5.vs,
+        17.5.vs,
         Expanded(
           child: HomeFiltersAndPaginatedListSection(),
         ),

@@ -1,7 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import '../../../data/models/response/character_response_model.dart';
-
 import '../../../../../core/helpers/app_helper.dart';
 import '../../../../../core/helpers/base_state.dart';
 import '../../../../../core/utils/debug_prints.dart';
@@ -13,10 +12,10 @@ class HomeCubit extends Cubit<CubitStates> {
   final HomeUseCase getAllCharactersUseCase;
   final PagingController<int, CharacterDataResponseModel> pagingController =
       PagingController(firstPageKey: 1);
-
   String? searchQuery;
   String? statusFilter;
   String? speciesFilter;
+  Timer? _debounce;
 
   HomeCubit({required this.getAllCharactersUseCase}) : super(LoadingState()) {
     pagingController.addPageRequestListener((pageKey) {
@@ -33,8 +32,12 @@ class HomeCubit extends Cubit<CubitStates> {
     statusFilter = status;
     speciesFilter = species;
 
-    // Reset paging
-    pagingController.refresh();
+    //! Debounce the fetchCharacters call
+    if (_debounce?.isActive ?? false) _debounce?.cancel();
+    _debounce = Timer(const Duration(milliseconds: 1000), () {
+      //! Reset paging
+      pagingController.refresh();
+    });
   }
 
   Future<void> fetchCharacters({int page = 1}) async {
@@ -45,31 +48,41 @@ class HomeCubit extends Cubit<CubitStates> {
         status: statusFilter,
         species: speciesFilter,
       ),
-      onStart: () {
-        Logger.printInfo('Fetching characters...');
-      },
-      onSuccess: (data) {
-        final characters = (data as CharacterResponseModel).data ??
-            <CharacterDataResponseModel>[];
-        final isLastPage = characters.length < AppConstants.pageSize;
-        if (isLastPage) {
-          pagingController.appendLastPage(characters);
-        } else {
-          final nextPageKey = page + 1;
-          pagingController.appendPage(characters, nextPageKey);
-        }
-        emit(LoadedState(data: characters));
-      },
-      onFail: (message) {
-        Logger.printError('Failed to fetch characters: $message');
-        pagingController.error = message;
-        emit(FailedState(message: message));
-      },
+      onStart: _onFetchStart,
+      onSuccess: (data) =>
+          _onFetchSuccess(data as CharacterResponseModel, page),
+      onFail: _onFetchFail,
+    );
+  }
+
+  void _onFetchStart() {
+    Logger.printInfo('Fetching characters...');
+  }
+
+  void _onFetchSuccess(CharacterResponseModel data, int page) {
+    final characters = data.data ?? <CharacterDataResponseModel>[];
+    final isLastPage = characters.length < AppConstants.pageSize;
+    if (isLastPage) {
+      pagingController.appendLastPage(characters);
+    } else {
+      final nextPageKey = page + 1;
+      pagingController.appendPage(characters, nextPageKey);
+    }
+    emit(LoadedState(data: characters));
+  }
+
+  void _onFetchFail(String message) {
+    Logger.printError('Failed to fetch characters: $message');
+    pagingController.error =
+        message; //! Display the error in the PagingController
+    emit(
+      FailedState(message: message),
     );
   }
 
   @override
   Future<void> close() {
+    _debounce?.cancel();
     pagingController.dispose();
     return super.close();
   }

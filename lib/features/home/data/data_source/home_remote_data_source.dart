@@ -1,8 +1,8 @@
+import '../../../../core/network/constants/endpoinst.dart';
 import '../../../../core/network/impl/dio_impl/dio_consumer.dart';
 import '../../../../core/network/model/response_model.dart';
 import '../models/response/character_response_model.dart';
 import '../../../../core/helpers/app_helper.dart';
-import '../../../../core/network/constants/endpoinst.dart';
 import '../../../../core/utils/debug_prints.dart';
 
 abstract class HomeRemoteDataSource {
@@ -22,24 +22,37 @@ class CharactersRemoteDataSourceImpl implements HomeRemoteDataSource {
   @override
   Future<BaseResponseModel> getAllCharacters({
     int page = 1,
-    String? name, // Search query
-    String? status, // Filter: status
-    String? species, // Filter: species
+    String? name,
+    String? status,
+    String? species,
   }) async {
-    return await remoteExecute(
-      request: dioConsumer.getRequest(
+    final queryParams = _buildQueryParams(page, name, status, species);
+
+    return remoteExecute(
+      request: dioConsumer
+          .getRequest(
         path: EndPoints.charactersEndPoint,
-        queryParams: {
-          "page": page,
-          if (name != null && name.isNotEmpty) "name": name,
-          if (status != null && status.isNotEmpty) "status": status,
-          if (species != null && species.isNotEmpty) "species": species,
-        },
-      ).then((response) {
+        queryParams: queryParams,
+      )
+          .then((response) {
         Logger.printInfo("Characters Raw Response: ${response.data}");
         return response;
       }),
       fromJsonFunction: (data) => CharacterResponseModel.fromJson(data),
     );
+  }
+
+  Map<String, dynamic> _buildQueryParams(
+      int page, String? name, String? status, String? species) {
+    final params = {
+      "page": page,
+      "name": name,
+      "status": status,
+      "species": species,
+    };
+    //! Remove null or empty values
+    params.removeWhere(
+        (key, value) => value == null || (value is String && value.isEmpty));
+    return params;
   }
 }

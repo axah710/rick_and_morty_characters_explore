@@ -1,7 +1,4 @@
-import 'dart:convert';
-
 import 'package:dio/dio.dart';
-
 import '../../models/response_code.dart';
 import '../../models/response_messages.dart';
 import '../abstract/failure.dart';
@@ -47,26 +44,32 @@ class ErrorHandler implements Exception {
 
     switch (response.statusCode) {
       case ResponseCode.BAD_REQUEST:
-        return _extractErrorMessage(response, DataSource.BAD_REQUEST);
+        return Failure(
+            ResponseCode.BAD_REQUEST, _getUserFriendlyMessage("Bad Request"));
       case ResponseCode.SERVER_ERROR:
-        return DataSource.SERVER_ERROR.getFailure();
-      case ResponseCode.Unprocessable_Content:
-        return DataSource.Unprocessable_Content.getFailure();
-      case ResponseCode.FORBIDDEN:
-        return DataSource.FORBIDDEN.getFailure();
+        return Failure(
+            ResponseCode.SERVER_ERROR, _getUserFriendlyMessage("Server Error"));
       case ResponseCode.UNAUTHORISED:
-        return DataSource.UNAUTHORISED.getFailure();
+        return Failure(
+            ResponseCode.UNAUTHORISED, _getUserFriendlyMessage("Unauthorized"));
       case ResponseCode.NOT_FOUND:
-        return DataSource.NOT_FOUND.getFailure();
+        return Failure(
+            ResponseCode.NOT_FOUND, _getUserFriendlyMessage("Not Found"));
       default:
         return DataSource.DEFAULT.getFailure();
     }
   }
 
-  Failure _extractErrorMessage(Response response, DataSource dataSource) {
-    final messageData = jsonDecode(response.data);
-    final message = messageData["message"] ?? '';
-    return Failure(ResponseCode.BAD_REQUEST, message);
+  String _getUserFriendlyMessage(String key) {
+    //! Maped error keys to user-friendly messages
+    const messages = {
+      "Bad Request": "Something went wrong. Please try again.",
+      "Server Error": "Our servers are currently down. Please try later.",
+      "Unauthorized": "You are not authorized to perform this action.",
+      "Not Found": "The requested resource could not be found.",
+    };
+
+    return messages[key] ?? "An unexpected error occurred.";
   }
 }
 

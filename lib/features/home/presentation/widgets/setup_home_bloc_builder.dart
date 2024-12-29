@@ -1,10 +1,11 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../../../core/enums.dart';
+import '../../../../core/network/app_service.dart';
 import '../../data/models/response/character_data_response_model.dart';
 import '../managers/home_cubit/home_cubit.dart';
 import 'home_screen_body_section.dart';
 import '../../../../core/helpers/base_state.dart';
 import '../../../../exports.dart';
-import 'home_characters_paginated_list_section.dart';
 
 class SetupCharactersBlocBuilder extends StatelessWidget {
   const SetupCharactersBlocBuilder({super.key});
@@ -19,7 +20,10 @@ class SetupCharactersBlocBuilder extends StatelessWidget {
           return setupSuccess(state.data);
         }
         if (state is FailedState) {
-          return setupError();
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            setupError(context, state.message);
+          });
+          return setupLoading();
         }
         if (state is LoadingState) {
           return setupLoading();
@@ -43,12 +47,12 @@ class SetupCharactersBlocBuilder extends StatelessWidget {
     return HomeScreenBodySection();
   }
 
-  Widget setupError() {
-    return Center(
-      child: Text(
-        AppStrings.errorOccurred,
-        style: getRegularTextStyle(color: AppColors.white, fontSize: 16),
-      ),
+  Widget setupError(BuildContext context, String message) {
+    AppService().showCustomDialogWithTimer(
+      message: message,
+      dialogType: AlertTypes.error,
+      onTimeOut: () => Routes.homeRoute.pushAndRemoveAllUntil(),
     );
+    return const SizedBox.shrink();
   }
 }

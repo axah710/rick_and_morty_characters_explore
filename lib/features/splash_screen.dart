@@ -20,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
   nextScreen() {
     timer = Timer.periodic(1.seconds, (timer) {
       counter++;
-      if (route.isNotNull && counter >= 5) {
+      if (route.isNotNull && counter >= AppConstants.splashScreenTime) {
         route!.moveToAndRemoveCurrent(); //! Navigate and remove splash screen
         timer.cancel();
       }

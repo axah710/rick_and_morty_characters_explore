@@ -8,7 +8,7 @@ class HomeSearchFieldSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-      final cubit = context.read<HomeCubit>();
+    final cubit = context.read<HomeCubit>();
     return AppTextFormField(
       onChanged: (value) {
         cubit.updateSearchAndFilters(query: value);

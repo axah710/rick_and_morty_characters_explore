@@ -7,4 +7,6 @@ class AppConstants {
   static double defaultElevation = 4;
   static EdgeInsetsGeometry kSTEPDirectionalPadding =
       EdgeInsetsDirectional.fromSTEB(16.w, 25.h, 16.w, 0.h);
+
+  static const int splashScreenTime = 5;
 }
