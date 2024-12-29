@@ -56,10 +56,10 @@ class PermissionDialog extends StatelessWidget {
                   onPressed: () => pop(false),
                   text: AppStrings.deny,
                   style: getMediumTextStyle(
-                      color: AppColors.primaryColor, fontSize: 16.h),
+                      color: AppColors.commonColor, fontSize: 16.h),
                   color: AppColors.white,
                   radius: 36.h,
-                  side: BorderSide(color: AppColors.primaryColor, width: 1.h),
+                  side: BorderSide(color: AppColors.commonColor, width: 1.h),
                 ),
                 SizedBox(
                   height: 35.h,

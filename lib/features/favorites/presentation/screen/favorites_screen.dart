@@ -1,4 +1,4 @@
-import 'package:rick_and_morty_characters_explore/features/favorites/presentation/widgets/favorites_body_section.dart';
+import '../widgets/favorites_body_section.dart';
 
 import '../../../../exports.dart';
 

@@ -5,9 +5,9 @@ ThemeData appTheme() {
     scaffoldBackgroundColor: AppColors.darkPurple,
     appBarTheme: AppBarTheme(
       backgroundColor: null,
-      iconTheme: IconThemeData(color: AppColors.primaryColor),
+      iconTheme: IconThemeData(color: AppColors.commonColor),
     ),
-    colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primaryColor),
+    colorScheme: ColorScheme.fromSeed(seedColor: AppColors.commonColor),
     textTheme: getTextTheme(),
     inputDecorationTheme: InputDecorationTheme(
       contentPadding:

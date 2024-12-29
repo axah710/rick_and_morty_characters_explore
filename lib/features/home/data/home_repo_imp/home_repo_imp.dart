@@ -1,6 +1,6 @@
 import 'package:either_dart/either.dart';
-import 'package:rick_and_morty_characters_explore/core/network/model/response_model.dart';
-import 'package:rick_and_morty_characters_explore/features/home/domain/home_repo/home_repo.dart';
+import '../../../../core/network/model/response_model.dart';
+import '../../domain/home_repo/home_repo.dart';
 
 import '../../../../core/helpers/app_helper.dart';
 import '../../../../core/network/abstract/failure.dart';
@@ -13,11 +13,21 @@ class HomeRepositoryImpl implements HomeRepository {
   HomeRepositoryImpl({required this.remoteDataSource});
 
   @override
-  Future<Either<Failure, BaseResponseModel>> getAllCharacters({int page = 1}) {
+  Future<Either<Failure, BaseResponseModel>> getAllCharacters({
+    int page = 1,
+    String? name,
+    String? status,
+    String? species,
+  }) {
     return execute(
       () async {
-        Logger.printInfo("Calling Get All Characters remote data source...");
-        return remoteDataSource.getAllCharacters(page: page);
+        Logger.printInfo("Fetching characters with filters...");
+        return remoteDataSource.getAllCharacters(
+          page: page,
+          name: name,
+          status: status,
+          species: species,
+        );
       },
     );
   }

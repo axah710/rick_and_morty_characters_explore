@@ -40,7 +40,7 @@ class CustomElevatedButton extends StatelessWidget {
 
   get _buildButton => ElevatedButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor: color ?? AppColors.primaryColor,
+          backgroundColor: color ?? AppColors.commonColor,
           elevation: elevation,
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(radius!), side: side),

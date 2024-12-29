@@ -33,6 +33,7 @@ class AppTextFormField extends StatelessWidget {
   final int? minLines;
   final int? maxLines;
   final TextInputType? keyboardType;
+  final void Function(String)? onChanged;
 
   const AppTextFormField({
     super.key,
@@ -58,7 +59,7 @@ class AppTextFormField extends StatelessWidget {
     this.enabledBorderSideWidth,
     this.minLines,
     this.maxLines,
-    this.keyboardType,
+    this.keyboardType, this.onChanged,
   });
 
   @override
@@ -67,6 +68,7 @@ class AppTextFormField extends StatelessWidget {
       height: height,
       width: width,
       child: TextFormField(
+        onChanged:onChanged ,
         keyboardType: keyboardType ?? TextInputType.text,
 
         minLines: minLines ?? 1,

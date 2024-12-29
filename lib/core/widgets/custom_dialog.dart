@@ -43,7 +43,7 @@ class CustomDialog extends StatelessWidget {
                                 height: 60.h,
                                 width: 60.w,
                                 child: const CircularProgressIndicator(
-                                  color: AppColors.primaryColor,
+                                  color: AppColors.commonColor,
                                 ))
                           else if (dialogType == AlertTypes.success)
                             SizedBox(
@@ -51,7 +51,7 @@ class CustomDialog extends StatelessWidget {
                               width: 80.w,
                               child: CustomSVGImage(
                                 asset: AppAssets.success,
-                                color: AppColors.primaryColor,
+                                color: AppColors.commonColor,
                                 matchTextDirection: false,
                               ),
                             )
@@ -62,7 +62,7 @@ class CustomDialog extends StatelessWidget {
                               child: CustomSVGImage(
                                 asset: AppAssets.failure,
                                 matchTextDirection: false,
-                                color: AppColors.primaryColor,
+                                color: AppColors.commonColor,
                               ),
                             ),
                           SizedBox(

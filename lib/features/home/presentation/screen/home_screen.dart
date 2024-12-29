@@ -1,4 +1,4 @@
-import 'package:rick_and_morty_characters_explore/features/home/presentation/widgets/home_bloc_builder.dart';
+import '../widgets/home_bloc_builder.dart';
 
 import '../../../../exports.dart';
 

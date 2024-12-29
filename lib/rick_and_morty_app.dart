@@ -1,4 +1,4 @@
-import 'package:rick_and_morty_characters_explore/features/splash_screen.dart';
+import 'features/splash_screen.dart';
 import 'exports.dart';
 
 class RickAndMortyApp extends StatelessWidget {

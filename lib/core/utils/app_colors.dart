@@ -6,7 +6,7 @@ class AppColors {
   AppColors._(); //! Private constructor to prevent instantiation
 
   //! Primary Colors
-  static const Color primaryColor = Color(0xFF252525);
+  static const Color commonColor = Color(0xFF252525);
 
   //! Neutral Colors
 
@@ -22,14 +22,10 @@ class AppColors {
 
   //! Other Colors
   static const Color black = Color(0xFF1A1A1A);
-
   static const Color white = Color(0xFFFFFFFF);
   static const Color transparent = Colors.transparent;
   static const descriptionColor = Color(0xFF606268);
-
   static const Color borderColor = Color(0xFFE2E8F0);
-
   static const Color lightPurple = Color(0xFF8879b5);
-  
   static const Color darkPurple = Color(0xFF2f1775);
 }

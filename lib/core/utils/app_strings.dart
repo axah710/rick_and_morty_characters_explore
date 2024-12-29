@@ -22,6 +22,8 @@ class AppStrings {
   static const String serverError = 'SERVER_ERROR';
   static const String noContent = "no_content";
   static const String success = "success";
+  static const String errorOccurred = 'An error occurred. Please try again.';
+
 
   //! Main Strings
   static const String deny = 'Deny';

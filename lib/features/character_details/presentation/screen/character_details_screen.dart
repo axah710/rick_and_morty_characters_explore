@@ -1,4 +1,4 @@
-import 'package:rick_and_morty_characters_explore/features/character_details/presentation/widgets/character_details_body_section.dart';
+import '../widgets/character_details_body_section.dart';
 
 import '../../../../exports.dart';
 import '../../data/models/character_details_arguments_model.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:rick_and_morty_characters_explore/features/home/domain/home_use_case/home_use_case.dart';
-import 'package:rick_and_morty_characters_explore/features/home/presentation/managers/home_cubit/home_cubit.dart';
+import '../../features/home/domain/home_use_case/home_use_case.dart';
+import '../../features/home/presentation/managers/home_cubit/home_cubit.dart';
 
 import '../../exports.dart';
 import '../../features/character_details/data/models/character_details_arguments_model.dart';

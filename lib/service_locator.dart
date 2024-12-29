@@ -1,9 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
-import 'package:rick_and_morty_characters_explore/features/home/data/data_source/home_remote_data_source.dart';
-import 'package:rick_and_morty_characters_explore/features/home/data/home_repo_imp/home_repo_imp.dart';
-import 'package:rick_and_morty_characters_explore/features/home/domain/home_use_case/home_use_case.dart';
-import 'package:rick_and_morty_characters_explore/features/home/presentation/managers/home_cubit/home_cubit.dart';
+import 'features/home/data/data_source/home_remote_data_source.dart';
+import 'features/home/data/home_repo_imp/home_repo_imp.dart';
+import 'features/home/domain/home_use_case/home_use_case.dart';
+import 'features/home/presentation/managers/home_cubit/home_cubit.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'core/network/impl/dio_impl/dio_consumer.dart';
 import 'core/network/impl/dio_impl/dio_interceptors.dart';
