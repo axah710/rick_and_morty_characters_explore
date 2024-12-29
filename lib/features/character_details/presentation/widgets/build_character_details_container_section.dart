@@ -21,6 +21,7 @@ Widget buildCharacterDetailsContainer(
           assetsImageWidth: 250.w,
           assetsImageRadius: 14.r,
           isNetworkImage: true,
+          assetImagefit: BoxFit.fill,
         ),
         8.vs,
         Text(

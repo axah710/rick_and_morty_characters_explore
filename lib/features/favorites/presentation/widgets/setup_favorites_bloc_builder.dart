@@ -11,7 +11,6 @@ class SetupFavoritesBlocBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    context.read<FavoritesCubit>().loadFavorites();
     return BlocBuilder<FavoritesCubit, CubitStates>(
       buildWhen: (previous, current) =>
           current is LoadedState || current is FailedState,
@@ -31,9 +30,10 @@ class SetupFavoritesBlocBuilder extends StatelessWidget {
   }
 
   Widget setupError() {
-    return const Center(
+    return Center(
       child: Text(
         'Failed to load favorites',
+        style: getSemiBoldTextStyle(fontSize: 24, color: AppColors.white),
       ),
     );
   }

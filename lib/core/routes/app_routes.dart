@@ -35,7 +35,8 @@ class RouteGenerator {
                 )..fetchCharacters(),
               ),
               BlocProvider<FavoritesCubit>(
-                create: (context) => FavoritesCubit()..loadFavorites(),
+                create: (context) =>
+                    ServiceLocator().favoritesCubit..loadFavorites(),
               ),
             ],
             child: const HomeScreen(),
@@ -55,8 +56,8 @@ class RouteGenerator {
         );
       case Routes.favoritesRoute:
         return buildPageRoute(
-          child: BlocProvider(
-            create: (context) => FavoritesCubit(),
+          child: BlocProvider.value(
+            value: ServiceLocator().favoritesCubit,
             child: const FavoritesScreen(),
           ),
           routeSettings: routeSettings,

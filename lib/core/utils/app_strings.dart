@@ -28,8 +28,9 @@ class AppStrings {
       'Our servers are currently down. Please try later.';
   static const String notFound = 'The requested resource could not be found.';
   static const String unexpectedError = 'An unexpected error occurred.';
-  static const String favoritesFailureMessage =
-      "Failed to load favorites";
+  static const String favoritesFailureMessage = "Failed to load favorites";
+    static const String noFavoritesMessage =
+      "Don't worry my friend, you have no favorites yet!";
 
   //! Main Strings
   static const String deny = 'Deny';

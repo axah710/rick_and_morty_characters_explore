@@ -26,7 +26,7 @@ class CustomImageProviderFromAssetsAndNetwork extends StatelessWidget {
               assetsImagePath,
               height: assetsImageHeight.h,
               width: assetsImageWidth?.w ?? double.infinity.w,
-              fit: BoxFit.cover,
+              fit: assetImagefit ?? BoxFit.cover,
             )
           : Image.asset(
               assetsImagePath,

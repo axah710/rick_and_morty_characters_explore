@@ -36,6 +36,7 @@ class HomeCharacterCardSection extends StatelessWidget {
                     assetsImageWidth: 75.0.w,
                     assetsImageRadius: 14.r,
                     isNetworkImage: true,
+                    assetImagefit: BoxFit.fitHeight,
                   ),
                   15.hs,
                   Expanded(

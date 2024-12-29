@@ -53,6 +53,4 @@ class FavoritesCubit extends Cubit<CubitStates> {
     await sharedPref.setData(
         AppPrefs.prefsFavoritesKey, json.encode(favorites));
   }
-
-  
 }
