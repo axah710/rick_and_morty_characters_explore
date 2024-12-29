@@ -12,7 +12,7 @@ class AppStrings {
   static const String unauthorizedError = "unauthorized_error";
   static const String notFoundError = "not_found_error";
   static const String connectTimeOutError = "timeout_error";
-  static const String defaultError = "default_error";
+  static const String defaultError = "An error occurred. Please try again.";
   static const String noInternetError = "No internet connection.";
   static const String cacheReadError = "cache_read_error";
   static const String cacheWriteError = "cache_write_error";
@@ -40,7 +40,7 @@ class AppStrings {
   static const String favoriteCharacters = 'Favorite Characters';
   static const String noCharactersFound = 'No characters found.';
 
- //! Alert Messages
+  //! Alert Messages
   static const String whoops = 'Whoops !!';
   static const String connectionErrorAlert =
       'There is a connection error. please check your internet and try again...';
