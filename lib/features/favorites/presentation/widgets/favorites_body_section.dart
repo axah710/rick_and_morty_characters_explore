@@ -21,7 +21,9 @@ class FavoritesBodySection extends StatelessWidget {
         25.vs,
         Expanded(
           child: favoriteCharacters.isEmpty
-              ? const Center(child: Text('No favorites added yet.'))
+              ? const Center(
+                  child: Text('No favorites added yet.'),
+                )
               : ListView.builder(
                   itemCount: favoriteCharacters.length,
                   itemBuilder: (context, index) {

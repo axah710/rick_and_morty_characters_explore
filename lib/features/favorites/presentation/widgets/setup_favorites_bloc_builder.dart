@@ -12,7 +12,6 @@ class SetupFavoritesBlocBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     context.read<FavoritesCubit>().loadFavorites();
-
     return BlocBuilder<FavoritesCubit, CubitStates>(
       buildWhen: (previous, current) =>
           current is LoadedState || current is FailedState,

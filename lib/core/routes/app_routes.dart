@@ -35,7 +35,7 @@ class RouteGenerator {
                 )..fetchCharacters(),
               ),
               BlocProvider<FavoritesCubit>(
-                create: (context) => FavoritesCubit(),
+                create: (context) => FavoritesCubit()..loadFavorites(),
               ),
             ],
             child: const HomeScreen(),
