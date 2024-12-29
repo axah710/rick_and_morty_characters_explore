@@ -23,6 +23,11 @@ class AppStrings {
   static const String noContent = "no_content";
   static const String success = "success";
   static const String errorOccurred = 'An error occurred. Please try again.';
+  static const String badRequest = 'Something went wrong. Please try again.';
+  static const String serverErrorMessage =
+      'Our servers are currently down. Please try later.';
+  static const String notFound = 'The requested resource could not be found.';
+  static const String unexpectedError = 'An unexpected error occurred.';
 
   //! Main Strings
   static const String deny = 'Deny';

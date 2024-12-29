@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import '../../models/response_code.dart';
 import '../../models/response_messages.dart';
+import '../../utils/app_strings.dart';
 import '../abstract/failure.dart';
 import '../network_enums.dart';
 
@@ -51,11 +52,11 @@ class ErrorHandler implements Exception {
 
   String _getUserFriendlyMessage(String key) {
     const messages = {
-      "Bad Request": "Something went wrong. Please try again.",
-      "Server Error": "Our servers are currently down. Please try later.",
-      "Not Found": "The requested resource could not be found.",
+      "Bad Request": AppStrings.badRequest,
+      "Server Error": AppStrings.serverErrorMessage,
+      "Not Found": AppStrings.notFound,
     };
-    return messages[key] ?? "An unexpected error occurred.";
+    return messages[key] ?? AppStrings.unexpectedError;
   }
 }
 
