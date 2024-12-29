@@ -1,6 +1,5 @@
-import '../widgets/setup_home_bloc_builder.dart';
-
 import '../../../../exports.dart';
+import '../widgets/setup_home_bloc_builder.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

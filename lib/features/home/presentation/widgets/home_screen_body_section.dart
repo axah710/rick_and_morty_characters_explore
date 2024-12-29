@@ -1,5 +1,4 @@
 import 'home_characters_paginated_list_section.dart';
-import 'home_favorite_text_section.dart';
 import '../../../../exports.dart';
 import 'home_search_field_section.dart';
 
@@ -22,7 +21,7 @@ class HomeScreenBodySection extends StatelessWidget {
         // HomeFavoriteTextSection(),
         17.5.vs,
         Expanded(
-          child: HomeFiltersAndPaginatedListSection(),
+          child: HomeDropdownFiltersAndPaginatedListSection(),
         ),
       ],
     );

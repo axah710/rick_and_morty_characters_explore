@@ -1,11 +1,11 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../features/home/domain/home_use_case/home_use_case.dart';
-import '../../features/home/presentation/managers/home_cubit/home_cubit.dart';
 
 import '../../exports.dart';
 import '../../features/character_details/data/models/character_details_arguments_model.dart';
 import '../../features/character_details/presentation/screen/character_details_screen.dart';
 import '../../features/favorites/presentation/screen/favorites_screen.dart';
+import '../../features/home/domain/home_use_case/home_use_case.dart';
+import '../../features/home/presentation/managers/home_cubit/home_cubit.dart';
 import '../../features/home/presentation/screen/home_screen.dart';
 import '../../service_locator.dart';
 

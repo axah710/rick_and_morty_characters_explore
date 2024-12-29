@@ -1,11 +1,12 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import '../../../../core/enums.dart';
+import '../../../../core/helpers/base_state.dart';
 import '../../../../core/network/app_service.dart';
+import '../../../../exports.dart';
 import '../../data/models/response/character_data_response_model.dart';
 import '../managers/home_cubit/home_cubit.dart';
 import 'home_screen_body_section.dart';
-import '../../../../core/helpers/base_state.dart';
-import '../../../../exports.dart';
 
 class SetupCharactersBlocBuilder extends StatelessWidget {
   const SetupCharactersBlocBuilder({super.key});

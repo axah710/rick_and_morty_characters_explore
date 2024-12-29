@@ -1,11 +1,12 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
-import '../../../data/models/response/character_response_model.dart';
+
 import '../../../../../core/helpers/app_helper.dart';
 import '../../../../../core/helpers/base_state.dart';
 import '../../../../../core/utils/debug_prints.dart';
 import '../../../../../exports.dart';
 import '../../../data/models/response/character_data_response_model.dart';
+import '../../../data/models/response/character_response_model.dart';
 import '../../../domain/home_use_case/home_use_case.dart';
 
 class HomeCubit extends Cubit<CubitStates> {

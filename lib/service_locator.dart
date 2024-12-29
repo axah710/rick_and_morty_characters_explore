@@ -1,14 +1,15 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
-import 'features/home/data/data_source/home_remote_data_source.dart';
-import 'features/home/data/home_repo_imp/home_repo_imp.dart';
-import 'features/home/domain/home_use_case/home_use_case.dart';
-import 'features/home/presentation/managers/home_cubit/home_cubit.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
 import 'core/network/impl/dio_impl/dio_consumer.dart';
 import 'core/network/impl/dio_impl/dio_interceptors.dart';
 import 'core/utils/debug_prints.dart';
+import 'features/home/data/data_source/home_remote_data_source.dart';
+import 'features/home/data/home_repo_imp/home_repo_imp.dart';
 import 'features/home/domain/home_repo/home_repo.dart';
+import 'features/home/domain/home_use_case/home_use_case.dart';
+import 'features/home/presentation/managers/home_cubit/home_cubit.dart';
 
 class ServiceLocator {
   static final GetIt getIt = GetIt.instance;

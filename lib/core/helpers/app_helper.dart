@@ -1,7 +1,10 @@
 import 'dart:math';
+
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:dio/dio.dart';
 import 'package:either_dart/either.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
 import '../../exports.dart';
 import '../../service_locator.dart';
 import '../enums.dart';
@@ -13,9 +16,6 @@ import '../network/constants/constants.dart';
 import '../network/error_handler/error_handler.dart';
 import '../network/model/response_model.dart';
 import '../network/network_enums.dart';
-
-import 'package:connectivity_plus/connectivity_plus.dart';
-
 import '../utils/debug_prints.dart';
 import 'permission_handler.dart';
 

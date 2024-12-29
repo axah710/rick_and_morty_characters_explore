@@ -1,6 +1,5 @@
-import '../widgets/favorites_body_section.dart';
-
 import '../../../../exports.dart';
+import '../widgets/favorites_body_section.dart';
 
 class FavoritesScreen extends StatelessWidget {
   const FavoritesScreen({super.key});

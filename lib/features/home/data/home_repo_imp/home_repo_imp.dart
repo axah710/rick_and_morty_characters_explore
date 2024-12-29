@@ -1,10 +1,10 @@
 import 'package:either_dart/either.dart';
-import '../../../../core/network/model/response_model.dart';
-import '../../domain/home_repo/home_repo.dart';
 
 import '../../../../core/helpers/app_helper.dart';
 import '../../../../core/network/abstract/failure.dart';
+import '../../../../core/network/model/response_model.dart';
 import '../../../../core/utils/debug_prints.dart';
+import '../../domain/home_repo/home_repo.dart';
 import '../data_source/home_remote_data_source.dart';
 
 class HomeRepositoryImpl implements HomeRepository {

@@ -1,6 +1,6 @@
-import '../../data/models/character_details_arguments_model.dart';
 import '../../../../core/widgets/logo_app_bar_widget.dart';
 import '../../../../exports.dart';
+import '../../data/models/character_details_arguments_model.dart';
 import 'build_character_details_container_section.dart';
 import 'build_planet_image_section.dart';
 

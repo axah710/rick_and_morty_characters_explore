@@ -1,9 +1,9 @@
+import '../../../../core/helpers/app_helper.dart';
 import '../../../../core/network/constants/endpoinst.dart';
 import '../../../../core/network/impl/dio_impl/dio_consumer.dart';
 import '../../../../core/network/model/response_model.dart';
-import '../models/response/character_response_model.dart';
-import '../../../../core/helpers/app_helper.dart';
 import '../../../../core/utils/debug_prints.dart';
+import '../models/response/character_response_model.dart';
 
 abstract class HomeRemoteDataSource {
   Future<BaseResponseModel> getAllCharacters({
