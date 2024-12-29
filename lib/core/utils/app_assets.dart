@@ -12,4 +12,5 @@ class AppAssets {
   static const String planet = '${_imagesPath}planet.png';
   static const String favorites = '${_imagesPath}favorites.png';
   static const String splashScreen = '${_imagesPath}splash_screen.png';
+  static const String wifi = '${_svgPath}wifi.svg';
 }
