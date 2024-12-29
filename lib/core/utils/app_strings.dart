@@ -24,7 +24,6 @@ class AppStrings {
   static const String success = "success";
   static const String errorOccurred = 'An error occurred. Please try again.';
 
-
   //! Main Strings
   static const String deny = 'Deny';
   static const String allow = 'Allow';
@@ -35,4 +34,12 @@ class AppStrings {
   static const String searchCharacter = 'Search Character';
   static const String favoriteCharacters = 'Favorite Characters';
   static const String noCharactersFound = 'No characters found.';
+
+  //! Dropdown Hints
+  static const String selectStatus = 'Select Status';
+  static const String selectSpecies = 'Select Species';
+
+  //! Dropdown Items
+  static const List<String> statusItems = ['Alive', 'Dead', 'unknown'];
+  static const List<String> speciesItems = ['Human', 'Alien', 'Robot'];
 }
