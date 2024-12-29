@@ -1,7 +1,6 @@
-import '../widgets/character_details_body_section.dart';
-
 import '../../../../exports.dart';
 import '../../data/models/character_details_arguments_model.dart';
+import '../widgets/character_details_body_section.dart';
 
 class CharacterDetailsScreen extends StatelessWidget {
   final CharacterDetailsArgumentsModel characterDetails;

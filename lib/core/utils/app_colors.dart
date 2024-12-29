@@ -11,6 +11,7 @@ class AppColors {
   //! Neutral Colors
 
   static const Color deepGray = Color(0xFF263238);
+  static const Color red = Colors.red;
 
   //! Accent Colors
 

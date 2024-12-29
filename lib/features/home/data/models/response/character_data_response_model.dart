@@ -37,4 +37,17 @@ class CharacterDataResponseModel {
       image: json['image'],
     );
   }
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'name': name,
+      'status': status,
+      'species': species,
+      'type': type,
+      'gender': gender,
+      'origin': origin.toJson(),
+      'location': location.toJson(),
+      'image': image,
+    };
+  }
 }

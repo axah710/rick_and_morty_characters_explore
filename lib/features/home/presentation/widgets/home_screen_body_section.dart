@@ -1,5 +1,6 @@
 import 'home_characters_paginated_list_section.dart';
 import '../../../../exports.dart';
+import 'home_favorite_text_section.dart';
 import 'home_search_field_section.dart';
 
 class HomeScreenBodySection extends StatelessWidget {
@@ -18,7 +19,7 @@ class HomeScreenBodySection extends StatelessWidget {
         35.5.vs,
         HomeSearchFieldSection(),
         12.5.vs,
-        // HomeFavoriteTextSection(),
+        HomeFavoriteTextSection(),
         17.5.vs,
         Expanded(
           child: HomeDropdownFiltersAndPaginatedListSection(),

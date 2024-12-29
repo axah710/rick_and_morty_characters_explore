@@ -1,4 +1,4 @@
-import 'package:rick_and_morty_characters_explore/core/widgets/svg_displayer.dart';
+import '../../../../core/widgets/svg_displayer.dart';
 import '../../../../exports.dart';
 import '../widgets/setup_home_bloc_builder.dart';
 import 'package:flutter_offline/flutter_offline.dart';
@@ -10,12 +10,16 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: OfflineBuilder(
-        connectivityBuilder: (BuildContext context, List<ConnectivityResult> connectivity, Widget child) {
-          final bool connected = !connectivity.contains(ConnectivityResult.none);
+        connectivityBuilder: (BuildContext context,
+            List<ConnectivityResult> connectivity, Widget child) {
+          final bool connected =
+              !connectivity.contains(ConnectivityResult.none);
           return Stack(
             fit: StackFit.expand,
             children: [
-              connected ? _buildConnectedContent() : _buildDisconnectedContent(),
+              connected
+                  ? _buildConnectedContent()
+                  : _buildDisconnectedContent(),
             ],
           );
         },

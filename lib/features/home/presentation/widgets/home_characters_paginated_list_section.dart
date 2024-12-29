@@ -1,8 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'home_filter_dropdown_section.dart';
-import 'home_paginated_list.dart';
+
 import '../../../../exports.dart';
 import '../managers/home_cubit/home_cubit.dart';
+import 'home_filter_dropdown_section.dart';
+import 'home_paginated_list.dart';
 
 class HomeDropdownFiltersAndPaginatedListSection extends StatelessWidget {
   const HomeDropdownFiltersAndPaginatedListSection({super.key});

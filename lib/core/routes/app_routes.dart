@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../exports.dart';
 import '../../features/character_details/data/models/character_details_arguments_model.dart';
 import '../../features/character_details/presentation/screen/character_details_screen.dart';
+import '../../features/favorites/presentation/managers/cubit/favorites_cubit.dart';
 import '../../features/favorites/presentation/screen/favorites_screen.dart';
 import '../../features/home/domain/home_use_case/home_use_case.dart';
 import '../../features/home/presentation/managers/home_cubit/home_cubit.dart';
@@ -26,10 +27,17 @@ class RouteGenerator {
     switch (routeSettings.name) {
       case Routes.homeRoute:
         return buildPageRoute(
-          child: BlocProvider(
-            create: (context) => HomeCubit(
-              getAllCharactersUseCase: ServiceLocator.getIt<HomeUseCase>(),
-            )..fetchCharacters(),
+          child: MultiBlocProvider(
+            providers: [
+              BlocProvider<HomeCubit>(
+                create: (context) => HomeCubit(
+                  getAllCharactersUseCase: ServiceLocator.getIt<HomeUseCase>(),
+                )..fetchCharacters(),
+              ),
+              BlocProvider<FavoritesCubit>(
+                create: (context) => FavoritesCubit(),
+              ),
+            ],
             child: const HomeScreen(),
           ),
           routeSettings: routeSettings,
@@ -47,7 +55,10 @@ class RouteGenerator {
         );
       case Routes.favoritesRoute:
         return buildPageRoute(
-          child: const FavoritesScreen(),
+          child: BlocProvider(
+            create: (context) => FavoritesCubit(),
+            child: const FavoritesScreen(),
+          ),
           routeSettings: routeSettings,
         );
     }

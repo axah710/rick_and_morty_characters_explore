@@ -1,5 +1,5 @@
-import 'features/splash_screen.dart';
 import 'exports.dart';
+import 'features/splash_screen.dart';
 
 class RickAndMortyApp extends StatelessWidget {
   const RickAndMortyApp({super.key});

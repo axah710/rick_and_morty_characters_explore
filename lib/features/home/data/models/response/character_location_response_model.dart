@@ -10,4 +10,10 @@ class CharacterLocationResponseModel {
       url: json['url'],
     );
   }
+  Map<String, dynamic> toJson() {
+    return {
+      'name': name,
+      'url': url,
+    };
+  }
 }

@@ -1,5 +1,5 @@
 import '../../../../exports.dart';
-import '../widgets/favorites_body_section.dart';
+import '../widgets/setup_favorites_bloc_builder.dart';
 
 class FavoritesScreen extends StatelessWidget {
   const FavoritesScreen({super.key});
@@ -10,7 +10,7 @@ class FavoritesScreen extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: AppConstants.kSTEPDirectionalPadding,
-          child: FavoritesBodySection(),
+          child: SetupFavoritesBlocBuilder(),
         ),
       ),
     );
