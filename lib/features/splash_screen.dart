@@ -9,48 +9,35 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  //! Counter to track timer ticks
-  int counter = 0;
-
-  //! Stores the route name for navigation after the splash screen
-  String? route;
-
   Timer? timer;
 
-  nextScreen() {
-    timer = Timer.periodic(1.seconds, (timer) {
-      counter++;
-      if (route.isNotNull && counter >= AppConstants.splashScreenTime) {
-        route!.moveToAndRemoveCurrent(); //! Navigate and remove splash screen
-        timer.cancel();
-      }
-    });
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
-      route = Routes.homeRoute;
+  @override
+  void initState() {
+    super.initState();
+    _navigateToNextScreen();
+  }
 
-      Logger.printInfo("route is $route");
+  void _navigateToNextScreen() {
+    timer = Timer(Duration(seconds: AppConstants.splashScreenDuration), () {
+      Navigator.of(context).pushReplacementNamed(Routes.homeRoute);
+      Logger.printInfo("Navigating to home route");
     });
   }
 
   @override
-  void initState() {
-    nextScreen();
-    super.initState();
+  void dispose() {
+    timer?.cancel();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        alignment: Alignment.center,
-        children: [
-          CustomImageProviderFromAssetsAndNetwork(
-            assetsImagePath: AppAssets.splashScreen,
-            assetsImageHeight: context.screenHeight,
-            assetsImageWidth: context.screenWidth,
-            assetImagefit: BoxFit.fill,
-          )
-        ],
+      body: CustomImageProviderFromAssetsAndNetwork(
+        assetsImagePath: AppAssets.splashScreen,
+        assetsImageHeight: context.screenHeight,
+        assetsImageWidth: context.screenWidth,
+        assetImagefit: BoxFit.fill,
       ),
     );
   }
