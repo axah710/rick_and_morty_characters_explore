@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
-import 'package:rick_and_morty_characters_explore/features/favorites/presentation/managers/cubit/favorites_cubit.dart';
+import 'features/favorites/presentation/managers/cubit/favorites_cubit.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'core/network/impl/dio_impl/dio_consumer.dart';

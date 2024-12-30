@@ -1,4 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import '../../../../core/helpers/base_state.dart';
 import '../../../../exports.dart';
 import '../../../character_details/data/models/character_details_arguments_model.dart';

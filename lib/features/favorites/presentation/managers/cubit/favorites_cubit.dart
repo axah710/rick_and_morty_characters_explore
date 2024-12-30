@@ -1,7 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:rick_and_morty_characters_explore/core/local_storage/constants/app_prefs.dart';
+
 import '../../../../../core/helpers/base_state.dart';
 import '../../../../../core/helpers/shared_preferences_helper.dart';
+import '../../../../../core/local_storage/constants/app_prefs.dart';
 import '../../../../../exports.dart';
 import '../../../../home/data/models/response/character_data_response_model.dart';
 
