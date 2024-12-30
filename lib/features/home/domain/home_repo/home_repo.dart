@@ -1,7 +1,7 @@
 import 'package:either_dart/either.dart';
-import '../../../../core/network/model/response_model.dart';
 
 import '../../../../core/network/abstract/failure.dart';
+import '../../../../core/network/model/response_model.dart';
 
 abstract class HomeRepository {
   Future<Either<Failure, BaseResponseModel>> getAllCharacters({

@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
-import 'package:rick_and_morty_characters_explore/features/home/data/models/episodes/response/episodes_data_response_model.dart';
+import '../../../data/models/episodes/response/episodes_data_response_model.dart';
 
 import '../../../../../core/helpers/app_helper.dart';
 import '../../../../../core/helpers/base_state.dart';
@@ -8,7 +8,6 @@ import '../../../../../core/utils/debug_prints.dart';
 import '../../../../../exports.dart';
 import '../../../data/models/characters/response/character_data_response_model.dart';
 import '../../../data/models/characters/response/character_response_model.dart';
-import '../../../data/models/episodes/response/episodes_response_model.dart';
 import '../../../domain/home_use_case/home_use_case.dart';
 
 class HomeCubit extends Cubit<CubitStates> {

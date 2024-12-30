@@ -1,7 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:rick_and_morty_characters_explore/core/network/model/response_model.dart';
-import 'package:rick_and_morty_characters_explore/features/home/data/models/episodes/response/episodes_data_response_model.dart';
-import 'package:rick_and_morty_characters_explore/features/home/data/models/episodes/response/episodes_response_model.dart';
+import '../../../home/data/models/episodes/response/episodes_data_response_model.dart';
 
 import '../../../../core/helpers/base_state.dart';
 import '../../../../exports.dart';

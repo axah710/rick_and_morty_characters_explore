@@ -1,4 +1,4 @@
-import 'package:rick_and_morty_characters_explore/features/character_details/presentation/widgets/setup_episodes_bloc_builder.dart';
+import 'setup_episodes_bloc_builder.dart';
 
 import '../../../../core/widgets/logo_app_bar_widget.dart';
 import '../../../../exports.dart';

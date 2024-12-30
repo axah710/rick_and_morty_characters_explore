@@ -1,5 +1,5 @@
-import 'home_characters_paginated_list_section.dart';
 import '../../../../exports.dart';
+import 'home_characters_paginated_list_section.dart';
 import 'home_favorite_text_section.dart';
 import 'home_search_field_section.dart';
 

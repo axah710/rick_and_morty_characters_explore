@@ -1,11 +1,11 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
-import 'features/favorites/presentation/managers/cubit/favorites_cubit.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'core/network/impl/dio_impl/dio_consumer.dart';
 import 'core/network/impl/dio_impl/dio_interceptors.dart';
 import 'core/utils/debug_prints.dart';
+import 'features/favorites/presentation/managers/cubit/favorites_cubit.dart';
 import 'features/home/data/data_source/home_remote_data_source.dart';
 import 'features/home/data/home_repo_imp/home_repo_imp.dart';
 import 'features/home/domain/home_repo/home_repo.dart';

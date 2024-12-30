@@ -1,4 +1,4 @@
-import 'package:rick_and_morty_characters_explore/core/network/model/response_model.dart';
+import '../../../../../../core/network/model/response_model.dart';
 
 import 'episodes_data_response_model.dart';
 
