@@ -30,9 +30,7 @@ class RouteGenerator {
           child: MultiBlocProvider(
             providers: [
               BlocProvider<HomeCubit>(
-                create: (context) => HomeCubit(
-                  getAllCharactersUseCase: ServiceLocator.getIt<HomeUseCase>(),
-                )..fetchCharacters(),
+                create: (context) => ServiceLocator().homeCubit..fetchCharacters(),
               ),
               BlocProvider<FavoritesCubit>(
                 create: (context) =>
@@ -51,7 +49,17 @@ class RouteGenerator {
         final characterDetails =
             routeSettings.arguments as CharacterDetailsArgumentsModel;
         return buildPageRoute(
-          child: CharacterDetailsScreen(characterDetails: characterDetails),
+          child: MultiBlocProvider(
+            providers: [
+              BlocProvider.value(
+                value: ServiceLocator().favoritesCubit,
+              ),
+              BlocProvider.value(
+                value: ServiceLocator().homeCubit,
+              ),
+            ],
+            child: CharacterDetailsScreen(characterDetails: characterDetails),
+          ),
           routeSettings: routeSettings,
         );
       case Routes.favoritesRoute:

@@ -80,7 +80,7 @@ class ServiceLocator {
       () => HomeUseCase(repository: getIt<HomeRepository>()),
     );
     getIt.registerLazySingleton<HomeCubit>(
-      () => HomeCubit(getAllCharactersUseCase: getIt<HomeUseCase>()),
+      () => HomeCubit(homeUseCase: getIt<HomeUseCase>()),
     );
   }
 
@@ -89,6 +89,7 @@ class ServiceLocator {
       () => FavoritesCubit(),
     );
   }
-    FavoritesCubit get favoritesCubit => getIt<FavoritesCubit>();
 
+  FavoritesCubit get favoritesCubit => getIt<FavoritesCubit>();
+  HomeCubit get homeCubit => getIt<HomeCubit>();
 }

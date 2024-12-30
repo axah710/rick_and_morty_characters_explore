@@ -11,6 +11,7 @@ class CharacterDataResponseModel {
   final CharacterOriginResponseModel origin;
   final CharacterLocationResponseModel location;
   final String image;
+  final List<String> episode;
 
   CharacterDataResponseModel({
     required this.id,
@@ -22,6 +23,7 @@ class CharacterDataResponseModel {
     required this.origin,
     required this.location,
     required this.image,
+    required this.episode,
   });
 
   factory CharacterDataResponseModel.fromJson(Map<String, dynamic> json) {
@@ -35,8 +37,10 @@ class CharacterDataResponseModel {
       origin: CharacterOriginResponseModel.fromJson(json['origin']),
       location: CharacterLocationResponseModel.fromJson(json['location']),
       image: json['image'],
+      episode: List<String>.from(json['episode']),
     );
   }
+
   Map<String, dynamic> toJson() {
     return {
       'id': id,
@@ -48,6 +52,7 @@ class CharacterDataResponseModel {
       'origin': origin.toJson(),
       'location': location.toJson(),
       'image': image,
+      'episode': episode,
     };
   }
 }

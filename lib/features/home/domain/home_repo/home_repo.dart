@@ -10,4 +10,6 @@ abstract class HomeRepository {
     String? status,
     String? species,
   });
+  Future<Either<Failure, BaseResponseModel>> getCharacterEpisodes(
+      List<int> ids);
 }

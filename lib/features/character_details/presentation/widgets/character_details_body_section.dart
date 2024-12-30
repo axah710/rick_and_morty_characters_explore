@@ -1,3 +1,5 @@
+import 'package:rick_and_morty_characters_explore/features/character_details/presentation/widgets/setup_episodes_bloc_builder.dart';
+
 import '../../../../core/widgets/logo_app_bar_widget.dart';
 import '../../../../exports.dart';
 import '../../data/models/character_details_arguments_model.dart';
@@ -25,6 +27,10 @@ class CharacterDetailsBodySection extends StatelessWidget {
           ],
         ),
         25.vs,
+        Container(
+          constraints: BoxConstraints(maxHeight: 300.h), 
+          child: SetupEpisodesBlocBuilder(),
+        ),
       ],
     );
   }

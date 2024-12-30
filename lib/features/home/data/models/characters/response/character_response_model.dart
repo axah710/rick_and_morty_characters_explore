@@ -1,4 +1,4 @@
-import '../../../../../core/network/model/response_model.dart';
+import '../../../../../../core/network/model/response_model.dart';
 import 'character_data_response_model.dart';
 import 'character_info_response_model.dart';
 

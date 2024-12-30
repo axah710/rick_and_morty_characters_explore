@@ -1,7 +1,7 @@
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 
 import '../../../../exports.dart';
-import '../../data/models/response/character_data_response_model.dart';
+import '../../data/models/characters/response/character_data_response_model.dart';
 import '../managers/home_cubit/home_cubit.dart';
 import 'home_character_card_section.dart';
 

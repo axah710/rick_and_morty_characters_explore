@@ -4,7 +4,7 @@ import '../../../../core/enums.dart';
 import '../../../../core/helpers/base_state.dart';
 import '../../../../core/network/app_service.dart';
 import '../../../../exports.dart';
-import '../../data/models/response/character_data_response_model.dart';
+import '../../data/models/characters/response/character_data_response_model.dart';
 import '../managers/home_cubit/home_cubit.dart';
 import 'home_screen_body_section.dart';
 
@@ -15,9 +15,12 @@ class SetupCharactersBlocBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<HomeCubit, CubitStates>(
       buildWhen: (previous, current) =>
-          current is LoadedState || current is FailedState,
+          current is LoadedState &&
+              current.data is List<CharacterDataResponseModel> ||
+          current is FailedState,
       builder: (context, state) {
         if (state is LoadedState) {
+          context.read<HomeCubit>().getEpisodeIdsFromCharacter(state.data);
           return setupSuccess(state.data);
         }
         if (state is FailedState) {

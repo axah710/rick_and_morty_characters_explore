@@ -4,7 +4,7 @@ import '../../../../core/helpers/base_state.dart';
 import '../../../../exports.dart';
 import '../../../character_details/data/models/character_details_arguments_model.dart';
 import '../../../favorites/presentation/managers/cubit/favorites_cubit.dart';
-import '../../data/models/response/character_data_response_model.dart';
+import '../../data/models/characters/response/character_data_response_model.dart';
 import 'home_character_info_section.dart';
 
 class HomeCharacterCardSection extends StatelessWidget {
@@ -84,6 +84,7 @@ class HomeCharacterCardSection extends StatelessWidget {
         status: characterDataResponseModel.status,
         location: characterDataResponseModel.location.name,
         origin: characterDataResponseModel.origin.name,
+        episodes: characterDataResponseModel.episode,
       ),
     );
   }

@@ -6,8 +6,10 @@ class CharacterDetailsArgumentsModel {
   final String status;
   final String origin;
   final String location;
+  final List episodes;
 
   CharacterDetailsArgumentsModel({
+    required this.episodes,
     required this.status,
     required this.origin,
     required this.location,

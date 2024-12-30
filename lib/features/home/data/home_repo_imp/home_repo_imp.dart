@@ -31,4 +31,15 @@ class HomeRepositoryImpl implements HomeRepository {
       },
     );
   }
+
+  @override
+  Future<Either<Failure, BaseResponseModel>> getCharacterEpisodes(
+      List<int> ids) {
+    return execute(
+      () async {
+        Logger.printInfo("Fetching character episodes...");
+        return remoteDataSource.getCharacterEpisodes(ids);
+      },
+    );
+  }
 }

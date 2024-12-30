@@ -4,7 +4,7 @@ import '../../../../../core/helpers/base_state.dart';
 import '../../../../../core/helpers/shared_preferences_helper.dart';
 import '../../../../../core/local_storage/constants/app_prefs.dart';
 import '../../../../../exports.dart';
-import '../../../../home/data/models/response/character_data_response_model.dart';
+import '../../../../home/data/models/characters/response/character_data_response_model.dart';
 
 class FavoritesCubit extends Cubit<CubitStates> {
   FavoritesCubit() : super(LoadingState());

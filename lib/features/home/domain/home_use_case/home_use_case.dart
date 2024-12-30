@@ -22,4 +22,9 @@ class HomeUseCase {
       species: species,
     );
   }
+
+  Future<Either<Failure, BaseResponseModel>> getCharacterEpisodes(
+      List<int> ids) {
+    return repository.getCharacterEpisodes(ids);
+  }
 }

@@ -1,5 +1,5 @@
 import '../../../../exports.dart';
-import '../../data/models/response/character_data_response_model.dart';
+import '../../data/models/characters/response/character_data_response_model.dart';
 
 class HomeCharacterInfoSection extends StatelessWidget {
   final CharacterDataResponseModel characterDataResponseModel;

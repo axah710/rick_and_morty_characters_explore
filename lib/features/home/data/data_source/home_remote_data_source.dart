@@ -3,7 +3,8 @@ import '../../../../core/network/constants/endpoinst.dart';
 import '../../../../core/network/impl/dio_impl/dio_consumer.dart';
 import '../../../../core/network/model/response_model.dart';
 import '../../../../core/utils/debug_prints.dart';
-import '../models/response/character_response_model.dart';
+import '../models/characters/response/character_response_model.dart';
+import '../models/episodes/response/episodes_response_model.dart';
 
 abstract class HomeRemoteDataSource {
   Future<BaseResponseModel> getAllCharacters({
@@ -12,6 +13,7 @@ abstract class HomeRemoteDataSource {
     String? status,
     String? species,
   });
+  Future<BaseResponseModel> getCharacterEpisodes(List<int> ids);
 }
 
 class CharactersRemoteDataSourceImpl implements HomeRemoteDataSource {
@@ -39,6 +41,23 @@ class CharactersRemoteDataSourceImpl implements HomeRemoteDataSource {
         return response;
       }),
       fromJsonFunction: (data) => CharacterResponseModel.fromJson(data),
+    );
+  }
+
+  @override
+  Future<BaseResponseModel> getCharacterEpisodes(List<int> ids) async {
+    final queryParams = {"ids": ids.join(",")};
+    return remoteExecute(
+      request: dioConsumer
+          .getRequest(
+        path: EndPoints.episodesEndPoint,
+        queryParams: queryParams,
+      )
+          .then((response) {
+        Logger.printInfo("Episodes Raw Response: ${response.data}");
+        return response;
+      }),
+      fromJsonFunction: (data) => EpisodesResponseModel.fromJson(data),
     );
   }
 
