@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:rick_and_morty_characters_explore/features/character_details/presentation/widgets/character_episodes_names_list_section.dart';
+import 'character_episodes_names_list_section.dart';
 import '../../../home/data/models/episodes/response/episodes_data_response_model.dart';
 
 import '../../../../core/helpers/base_state.dart';

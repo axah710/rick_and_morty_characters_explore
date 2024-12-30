@@ -1,7 +1,8 @@
+import 'package:flutter_offline/flutter_offline.dart';
+
 import '../../../../core/widgets/svg_displayer.dart';
 import '../../../../exports.dart';
 import '../widgets/setup_home_bloc_builder.dart';
-import 'package:flutter_offline/flutter_offline.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
