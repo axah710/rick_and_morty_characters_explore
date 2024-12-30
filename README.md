@@ -8,11 +8,11 @@ A Flutter app that explores the world of Rick and Morty by fetching character de
 
 | Native Splash      | App Splash         | Home Page         |
 |---------------------|--------------------|-------------------|
-| ![Native Splash](./screenshots/native_splash.png) | ![Splash](./screenshots/splash.png) | ![Home](./screenshots/home.png) |
+| ![Native Splash](https://github.com/user-attachments/assets/32db2767-5a23-4574-9aea-475c30dc9306) | ![Splash](https://github.com/user-attachments/assets/89a9cfd1-8d16-452b-bbc8-8cc37a940194) | ![Home](https://github.com/user-attachments/assets/1d7d1e41-1ed0-47d5-b8b1-99b25a56ac96) |
 
 | Favorites          | No Favorites       | No Internet       |
 |---------------------|--------------------|-------------------|
-| ![Favorites](./screenshots/favorites.png) | ![No Favorites](./screenshots/no_favorites.png) | ![No Internet](./screenshots/no_internet.png) |
+| ![Favorites](https://github.com/user-attachments/assets/3f171d21-ec0f-4e9e-846f-9e3b002725ca) | ![No Favorites](https://github.com/user-attachments/assets/bae9e06a-ec66-427b-8a19-7459c05a2cf3) | ![No Internet](https://github.com/user-attachments/assets/7b8b764d-7901-4506-80e1-b41cb61c27c2) |
 
 ---
 
@@ -80,6 +80,22 @@ Each feature is implemented in a modular folder structure.
   - Use Case: Encapsulates application-specific business logic.
 - **Presentation Layer:**
   - UI screens and state management using `flutter_bloc`.
+
+---
+
+## **Focus Areas**
+
+While building this app, I emphasized the following software development principles and best practices:
+
+- **Performance Bottlenecks:** Ensured smooth scrolling, fast data loading, and efficient API calls.
+- **Maintainability Concerns:** Structured the project for long-term maintainability with clean architecture.
+- **Readability Challenges:** Used clear naming conventions and concise code for better readability.
+- **Object-Oriented Programming (OOP):** Followed OOP principles to create modular, reusable components.
+- **Data Structures & Algorithms (DSA):** Applied efficient data structures and algorithms for features like searching and filtering.
+- **SOLID Principles:** Ensured the app adheres to SOLID principles for robust and flexible design.
+- **Design Patterns:** Utilized design patterns like Singleton (e.g., `GetIt` for dependency injection).
+- **Clean Code:** Wrote well-documented, readable, and maintainable code.
+- **Code Smells:** Regularly refactored code to eliminate code smells and improve quality.
 
 ---
 
